@@ -30,10 +30,10 @@ public class ContatoService {
 
     public ContatoModel atualizar(int id, ContatoModel contato) {
         Optional<ContatoModel> existente = contatoRepository.findById(id);
-        System.out.println("existente: "+ existente.get().getCpf());
-        System.out.println("contato: "+ contato.getCpf());
+        System.out.println("existente: " + existente.get().getCpf());
+        System.out.println("contato: " + contato.getCpf());
         BeanUtils.copyProperties(contato, existente.get(), "id");
-        System.out.println("existente 2: "+ existente.get().getCpf());
+        System.out.println("existente 2: " + existente.get().getCpf());
         return contatoRepository.save(existente.get());
 
     }
