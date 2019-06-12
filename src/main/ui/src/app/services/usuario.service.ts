@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -6,12 +6,12 @@ import {HttpClient} from "@angular/common/http";
 })
 export class UsuarioService {
 
-  contatosUrl = 'Http://localhost:8080/rest/contatos'
+  private Url = '/rest/contatos'
 
+  constructor(private http: HttpClient) {
+  }
 
-  constructor(private http: HttpClient) { }
-
-  listar(){
-    return this.http.get<any[]>(`${this.contatosUrl}`+'/listar')
+  listar() {
+    return this.http.get<any[]>(`${this.Url}` + '/listar')
   }
 }
