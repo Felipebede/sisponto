@@ -8,12 +8,14 @@ import {UsuarioService} from "./services/usuario.service";
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import {ROUTES} from "./app.routes";
 import {RouterModule} from "@angular/router";
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsuariosListagemComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
