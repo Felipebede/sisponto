@@ -27,3 +27,6 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+/src/main/ui/node_modules/
+/src/main/ui/package-lock.json
