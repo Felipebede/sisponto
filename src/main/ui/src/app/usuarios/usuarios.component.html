@@ -1,3 +1,32 @@
-<p>
-  usuarios works!
-</p>
+<H2>Listagem Usuários</H2>
+
+<button mat-raised-button color="primary" (click)="abrirModal()">Novo</button>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" class="tabela">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+    <td mat-cell (click)="editar()" class="celula" *matCellDef="let element"> {{element.id}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome</th>
+    <td mat-cell  (click)="editar()" class="celula" *matCellDef="let element"> {{element.nome}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="cpf">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> CPF</th>
+    <td mat-cell (click)="editar()" class="celula" *matCellDef="let element"> {{element.cpf}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+    <td mat-cell *matCellDef="let element">
+      <button>apagar</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let dataSource; columns: displayedColumns;"></tr>
+</table>

@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatListModule, MatSidenavModule} from '@angular/material';
 import {AdministracaoComponent} from './menu/administracao/administracao.component';
 import { ContainerComponent } from './container/container.component';
+import {DemoMaterialModule} from "./material-module";
+import { UsuarioModalComponent } from './usuarios/usuario-modal/usuario-modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ContainerComponent } from './container/container.component';
     UsuariosComponent,
     UsuariosListagemComponent,
     AdministracaoComponent,
-    ContainerComponent
+    ContainerComponent,
+    UsuarioModalComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { ContainerComponent } from './container/container.component';
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
     BrowserAnimationsModule,
+    DemoMaterialModule,
     MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule
 
   ],
