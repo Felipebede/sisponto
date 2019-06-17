@@ -1,26 +1,37 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from "@angular/common/http";
 
+import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {MenuComponent} from './menu/menu.component';
+import {UsuariosComponent} from './usuarios/usuarios.component';
 import {UsuariosListagemComponent} from './usuarios-listagem/usuarios-listagem.component';
-import {UsuarioService} from "./services/usuario.service";
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import {ROUTES} from "./app.routes";
-import {RouterModule} from "@angular/router";
-import { MenuComponent } from './menu/menu.component';
+import {UsuarioService} from './services/usuarios.service';
+import {RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import {ROUTES} from './app.routes';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatListModule, MatSidenavModule} from '@angular/material';
+import {AdministracaoComponent} from './menu/administracao/administracao.component';
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsuariosListagemComponent,
+    MenuComponent,
     UsuariosComponent,
-    MenuComponent
+    UsuariosListagemComponent,
+    AdministracaoComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
+    BrowserAnimationsModule,
+    MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule
+
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

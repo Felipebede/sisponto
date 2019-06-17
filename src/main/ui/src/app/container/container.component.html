@@ -1,0 +1,12 @@
+<mat-drawer-container class="example-container" hasBackdrop="false">
+
+  <mat-drawer #drawer mode="side" (click)="drawer.toggle()">
+    <app-menu></app-menu>
+  </mat-drawer>
+
+  <button *ngIf="drawer.opened" mat-raised-button (click)="drawer.toggle()"><< </button>
+  <button *ngIf="!drawer.opened" mat-raised-button (click)="drawer.toggle()">>> </button>
+
+  <router-outlet></router-outlet>
+
+</mat-drawer-container>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UsuarioService} from "../services/usuario.service";
+import {UsuarioService} from '../services/usuarios.service';
+
 
 @Component({
   selector: 'app-usuarios-listagem',
@@ -17,7 +18,7 @@ export class UsuariosListagemComponent implements OnInit {
 
   ngOnInit() {
 
-    this.listar()
+    this.listar();
   }
 
   listar() {
